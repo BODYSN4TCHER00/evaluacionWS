@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #5c6bc0;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #3f51b5;
+}
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+    }
+}
+
+/* Mejoras en Inputs */
+.input-group input:focus {
+    border-color: #5c6bc0;
+    box-shadow: 0 0 3px #719ece;
+}
+
+/* Mejoras en Botones */
+button:hover, button:focus {
+    background-color: #3f51b5;
+    outline: none; /* Elimina el contorno predeterminado en foco */
+}
+
+/* Transiciones Suaves */
+.input-group input, button {
+    transition: all 0.3s ease;
+}
+
+/* Estilo para mensajes de error */
+#error-message {
+    margin-bottom: 10px;
+}
+
+</style>
+<body>
+    
+    <div class="login-container">
+        <form class="login-form" method="POST" novalidate>
+            {% csrf_token %}
+            <h2>Login</h2>
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div id="error-message" style="color: red;"></div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
+ 
